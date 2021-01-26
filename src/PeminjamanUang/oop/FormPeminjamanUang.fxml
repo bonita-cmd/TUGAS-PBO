@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeminjamanUang.oop.Controller">
+   <children>
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane layoutY="27.0" prefHeight="475.0" prefWidth="750.0">
+         <children>
+            <TabPane prefHeight="475.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Syariah">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #1d3557;">
+                           <children>
+                              <AnchorPane prefHeight="446.0" prefWidth="750.0">
+                                 <children>
+                                    <AnchorPane prefHeight="447.0" prefWidth="247.0" style="-fx-background-color: #457b9d;">
+                                       <children>
+                                          <VBox prefHeight="450.0" prefWidth="249.0">
+                                             <children>
+                                                <AnchorPane prefHeight="446.0" prefWidth="249.0">
+                                                   <children>
+                                                      <Label layoutX="33.0" layoutY="10.0" prefHeight="30.0" prefWidth="183.0" text="Peminjaman Uang">
+                                                         <font>
+                                                            <Font name="System Bold" size="20.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="tfktp" layoutX="14.0" layoutY="44.0" prefHeight="33.0" prefWidth="218.0" promptText="No. KTP" />
+                                                      <TextField fx:id="tfnama" layoutX="14.0" layoutY="90.0" prefHeight="33.0" prefWidth="218.0" promptText="Nama Peminjam" />
+                                                      <TextField fx:id="tfalamat" layoutX="14.0" layoutY="136.0" prefHeight="33.0" prefWidth="218.0" promptText="Alamat" />
+                                                      <TextField fx:id="tftelp" layoutX="14.0" layoutY="180.0" prefHeight="33.0" prefWidth="218.0" promptText="No. Telp" />
+                                                      <TextField fx:id="tfid" layoutX="14.0" layoutY="236.0" prefHeight="33.0" prefWidth="218.0" promptText="ID Peminjaman" />
+                                                      <TextField fx:id="tfnominal" layoutX="14.0" layoutY="281.0" prefHeight="33.0" prefWidth="218.0" promptText="Nominal" />
+                                                      <Button fx:id="btnpinjam" layoutX="14.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleButtonPinjam" prefHeight="25.0" prefWidth="216.0" text="Pinjam" />
+                                                      <Button fx:id="btnreload" layoutX="14.0" layoutY="363.0" mnemonicParsing="false" onAction="#handleButtonReload" prefHeight="25.0" prefWidth="216.0" text="Reload" />
+                                                      <Button fx:id="btnclear" layoutX="14.0" layoutY="397.0" mnemonicParsing="false" onAction="#handleButtonClear" prefHeight="25.0" prefWidth="216.0" text="Clear" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="249.0" prefHeight="250.0" prefWidth="503.0">
+                                       <children>
+                                          <HBox prefHeight="250.0" prefWidth="504.0">
+                                             <children>
+                                                <AnchorPane prefHeight="250.0" prefWidth="573.0">
+                                                   <children>
+                                                      <TableView fx:id="tblpeminjam" prefHeight="250.0" prefWidth="503.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="colktp" prefWidth="108.0" text="No. KTP" />
+                                                          <TableColumn fx:id="colnama" prefWidth="129.0" text="Nama" />
+                                                            <TableColumn fx:id="colalamat" prefWidth="172.0" text="Alamat" />
+                                                            <TableColumn fx:id="coltelp" prefWidth="93.0" text="No. Telp" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="249.0" layoutY="250.0" prefHeight="200.0" prefWidth="502.0" style="-fx-background-color: #a8dadc;">
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="263.0">
+                                             <children>
+                                                <TableView fx:id="tblpeminjaman" layoutY="-1.0" prefHeight="201.0" prefWidth="264.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="colid" prefWidth="127.0" text="ID Peminjaman" />
+                                                    <TableColumn fx:id="colnominal" prefWidth="136.0" text="Nominal" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="258.0" prefHeight="200.0" prefWidth="243.0">
+                                             <children>
+                                                <TextField fx:id="tfnewktp" disable="true" layoutX="16.0" layoutY="22.0" prefHeight="33.0" prefWidth="218.0" promptText="No. KTP" />
+                                                <TextField fx:id="tfnewid" layoutX="16.0" layoutY="61.0" prefHeight="33.0" prefWidth="218.0" promptText="ID Peminjaman" />
+                                                <TextField fx:id="tfnewnominal" layoutX="16.0" layoutY="100.0" prefHeight="33.0" prefWidth="218.0" promptText="Nominal" />
+                                                <Button fx:id="btnnewpinjam" layoutX="16.0" layoutY="146.0" mnemonicParsing="false" onAction="#handleButtonNewPinjam" prefHeight="25.0" prefWidth="219.0" text="Pinjam" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
